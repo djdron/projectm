@@ -16,7 +16,7 @@
     <ResourceCompile Include="projectM.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="projectm_qDj_icon.ico" />
+    <Image Include="projectM.ico" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />

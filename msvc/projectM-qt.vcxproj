@@ -1,9 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|x64">
       <Configuration>Debug</Configuration>
       <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|x64">
       <Configuration>Release</Configuration>
@@ -24,7 +32,17 @@
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
@@ -41,17 +59,69 @@
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">projectM-qt.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">projectM-qt</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">projectM-qt</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">projectM-qt.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">projectM-qt</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">projectM-qt</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\GIT\projectm\build-win\projectm\projectM-qt;$(MSBuildThisFileDirectory)../src\projectM-qt;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtWidgets;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtGui;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtANGLE;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtCore;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\.\mkspecs\win32-msvc;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>USE_TEXT_MENU;USE_FTGL;WIN32;_WINDOWS;PROJECTM_PREFIX='';LINUX;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_OPENGL_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;PROJECTM_PREFIX='';LINUX;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_OPENGL_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\GIT\projectm\build-win\projectm\projectM-qt;$(MSBuildThisFileDirectory)../src\projectM-qt;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtWidgets;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtGui;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtANGLE;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtCore;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\.\mkspecs\win32-msvc;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\GIT\projectm\build-win\projectm\projectM-qt;$(MSBuildThisFileDirectory)../src\projectM-qt;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtWidgets;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtGui;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtANGLE;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtCore;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\.\mkspecs\win32-msvc;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\libprojectM\Debug\projectM.lib;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\Qt5OpenGLd.lib;..\libprojectM\NativePresetFactory\Debug\NativePresetFactory.lib;..\libprojectM\MilkdropPresetFactory\Debug\MilkdropPresetFactory.lib;..\libprojectM\Renderer\Debug\Renderer.lib;ftgl.lib;freetype.lib;opengl32.lib;glu32.lib;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\Qt5Widgetsd.lib;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\Qt5Guid.lib;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\Qt5Cored.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/GIT/projectm/build-win/projectm/projectM-qt/Debug/projectM-qt.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/GIT/projectm/build-win/projectm/projectM-qt/Debug/projectM-qt.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <AdditionalIncludeDirectories>C:\GIT\projectm\build-win\projectm\projectM-qt;$(MSBuildThisFileDirectory)../src\projectM-qt;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtWidgets;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtGui;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtANGLE;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtCore;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\.\mkspecs\win32-msvc;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Debug/</AssemblerListingLocation>
@@ -139,10 +209,64 @@
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
     </ProjectReference>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\GIT\projectm\build-win\projectm\projectM-qt;$(MSBuildThisFileDirectory)../src\projectM-qt;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtWidgets;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtGui;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtANGLE;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtCore;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\.\mkspecs\win32-msvc;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>USE_TEXT_MENU;WIN32;_WINDOWS;NDEBUG;PROJECTM_PREFIX='';LINUX;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_OPENGL_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;PROJECTM_PREFIX='';LINUX;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_OPENGL_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\GIT\projectm\build-win\projectm\projectM-qt;$(MSBuildThisFileDirectory)../src\projectM-qt;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtWidgets;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtGui;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtANGLE;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtCore;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\.\mkspecs\win32-msvc;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\GIT\projectm\build-win\projectm\projectM-qt;$(MSBuildThisFileDirectory)../src\projectM-qt;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtWidgets;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtGui;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtANGLE;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtCore;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\.\mkspecs\win32-msvc;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\include\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\libprojectM\Release\projectM.lib;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\Qt5OpenGL.lib;..\libprojectM\NativePresetFactory\Release\NativePresetFactory.lib;..\libprojectM\MilkdropPresetFactory\Release\MilkdropPresetFactory.lib;..\libprojectM\Renderer\Release\Renderer.lib;ftgl.lib;freetype.lib;opengl32.lib;glu32.lib;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\Qt5Widgets.lib;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\Qt5Gui.lib;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\Qt5Core.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/GIT/projectm/build-win/projectm/projectM-qt/Release/projectM-qt.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/GIT/projectm/build-win/projectm/projectM-qt/Release/projectM-qt.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
   <ItemGroup>
     <CustomBuild Include="$(MSBuildThisFileDirectory)../src\projectM-qt\application.qrc">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating qrc_application.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating qrc_application.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\rcc.exe --name application --output C:/GIT/projectm/build-win/projectm/projectM-qt/qrc_application.cpp C:/GIT/projectm/src/projectM-qt/application.qrc
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
 C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\rcc.exe --name application --output C:/GIT/projectm/build-win/projectm/projectM-qt/qrc_application.cpp C:/GIT/projectm/src/projectM-qt/application.qrc
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
@@ -152,9 +276,13 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GIT/projectm/src/projectM-qt/application.qrc;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_add_playlist.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_edit.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_lock.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_playlist_clear.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_random.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_random_no.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_remove.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_save.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_unlock.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\prjm16-transparent.svg;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\rating-1.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\rating-2.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\rating-3.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\rating-4.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\rating-5.png;$(MSBuildThisFileDirectory)../src\projectM-qt\application.qrc;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/GIT/projectm/src/projectM-qt/application.qrc;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_add_playlist.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_edit.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_lock.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_playlist_clear.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_random.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_random_no.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_remove.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_save.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_unlock.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\prjm16-transparent.svg;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\rating-1.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\rating-2.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\rating-3.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\rating-4.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\rating-5.png;$(MSBuildThisFileDirectory)../src\projectM-qt\application.qrc;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\qrc_application.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\qrc_application.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating qrc_application.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating qrc_application.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
 C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\rcc.exe --name application --output C:/GIT/projectm/build-win/projectm/projectM-qt/qrc_application.cpp C:/GIT/projectm/src/projectM-qt/application.qrc
 if %errorlevel% neq 0 goto :cmEnd
@@ -164,15 +292,41 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\rcc.exe --name application --output C:/GIT/projectm/build-win/projectm/projectM-qt/qrc_application.cpp C:/GIT/projectm/src/projectM-qt/application.qrc
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GIT/projectm/src/projectM-qt/application.qrc;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_add_playlist.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_edit.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_lock.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_playlist_clear.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_random.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_random_no.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_remove.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_save.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_unlock.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\prjm16-transparent.svg;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\rating-1.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\rating-2.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\rating-3.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\rating-4.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\rating-5.png;$(MSBuildThisFileDirectory)../src\projectM-qt\application.qrc;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/GIT/projectm/src/projectM-qt/application.qrc;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_add_playlist.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_edit.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_lock.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_playlist_clear.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_random.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_random_no.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_remove.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_save.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\hi16-action-projectm_unlock.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\prjm16-transparent.svg;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\rating-1.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\rating-2.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\rating-3.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\rating-4.png;$(MSBuildThisFileDirectory)../src\projectM-qt\images\icons\rating-5.png;$(MSBuildThisFileDirectory)../src\projectM-qt\application.qrc;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\qrc_application.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\qrc_application.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\GIT\projectm\build-win\projectm\CMakeFiles\79cc4e7a331c122f5a3a312cde1aff55\moc_qprojectm_mainwindow.cpp.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating moc_qprojectm_mainwindow.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating moc_qprojectm_mainwindow.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\GIT\projectm\build-win\projectm\projectM-qt
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\moc.exe @C:/GIT/projectm/build-win/projectm/projectM-qt/moc_qprojectm_mainwindow.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
 cd C:\GIT\projectm\build-win\projectm\projectM-qt
 if %errorlevel% neq 0 goto :cmEnd
 C:
@@ -186,9 +340,13 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qprojectm_mainwindow.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectm_mainwindow.hpp;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qprojectm_mainwindow.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectm_mainwindow.hpp;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qprojectm_mainwindow.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qprojectm_mainwindow.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating moc_qprojectm_mainwindow.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating moc_qprojectm_mainwindow.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
 cd C:\GIT\projectm\build-win\projectm\projectM-qt
 if %errorlevel% neq 0 goto :cmEnd
@@ -202,15 +360,45 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\GIT\projectm\build-win\projectm\projectM-qt
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\moc.exe @C:/GIT/projectm/build-win/projectm/projectM-qt/moc_qprojectm_mainwindow.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qprojectm_mainwindow.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectm_mainwindow.hpp;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qprojectm_mainwindow.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectm_mainwindow.hpp;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qprojectm_mainwindow.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qprojectm_mainwindow.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\GIT\projectm\build-win\projectm\CMakeFiles\79cc4e7a331c122f5a3a312cde1aff55\moc_qpresetfiledialog.cpp.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating moc_qpresetfiledialog.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating moc_qpresetfiledialog.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\GIT\projectm\build-win\projectm\projectM-qt
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\moc.exe @C:/GIT/projectm/build-win/projectm/projectM-qt/moc_qpresetfiledialog.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
 cd C:\GIT\projectm\build-win\projectm\projectM-qt
 if %errorlevel% neq 0 goto :cmEnd
 C:
@@ -224,9 +412,13 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qpresetfiledialog.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qpresetfiledialog.hpp;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qpresetfiledialog.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qpresetfiledialog.hpp;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qpresetfiledialog.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qpresetfiledialog.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating moc_qpresetfiledialog.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating moc_qpresetfiledialog.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
 cd C:\GIT\projectm\build-win\projectm\projectM-qt
 if %errorlevel% neq 0 goto :cmEnd
@@ -240,15 +432,45 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\GIT\projectm\build-win\projectm\projectM-qt
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\moc.exe @C:/GIT/projectm/build-win/projectm/projectM-qt/moc_qpresetfiledialog.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qpresetfiledialog.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qpresetfiledialog.hpp;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qpresetfiledialog.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qpresetfiledialog.hpp;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qpresetfiledialog.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qpresetfiledialog.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\GIT\projectm\build-win\projectm\CMakeFiles\79cc4e7a331c122f5a3a312cde1aff55\moc_qplaylistfiledialog.cpp.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating moc_qplaylistfiledialog.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating moc_qplaylistfiledialog.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\GIT\projectm\build-win\projectm\projectM-qt
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\moc.exe @C:/GIT/projectm/build-win/projectm/projectM-qt/moc_qplaylistfiledialog.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
 cd C:\GIT\projectm\build-win\projectm\projectM-qt
 if %errorlevel% neq 0 goto :cmEnd
 C:
@@ -262,9 +484,13 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qplaylistfiledialog.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qplaylistfiledialog.hpp;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qplaylistfiledialog.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qplaylistfiledialog.hpp;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qplaylistfiledialog.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qplaylistfiledialog.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating moc_qplaylistfiledialog.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating moc_qplaylistfiledialog.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
 cd C:\GIT\projectm\build-win\projectm\projectM-qt
 if %errorlevel% neq 0 goto :cmEnd
@@ -278,15 +504,45 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\GIT\projectm\build-win\projectm\projectM-qt
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\moc.exe @C:/GIT/projectm/build-win/projectm/projectM-qt/moc_qplaylistfiledialog.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qplaylistfiledialog.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qplaylistfiledialog.hpp;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qplaylistfiledialog.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qplaylistfiledialog.hpp;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qplaylistfiledialog.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qplaylistfiledialog.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\GIT\projectm\build-win\projectm\CMakeFiles\79cc4e7a331c122f5a3a312cde1aff55\moc_qplaylistmodel.cpp.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating moc_qplaylistmodel.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating moc_qplaylistmodel.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\GIT\projectm\build-win\projectm\projectM-qt
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\moc.exe @C:/GIT/projectm/build-win/projectm/projectM-qt/moc_qplaylistmodel.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
 cd C:\GIT\projectm\build-win\projectm\projectM-qt
 if %errorlevel% neq 0 goto :cmEnd
 C:
@@ -300,9 +556,13 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qplaylistmodel.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qplaylistmodel.hpp;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qplaylistmodel.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qplaylistmodel.hpp;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qplaylistmodel.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qplaylistmodel.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating moc_qplaylistmodel.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating moc_qplaylistmodel.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
 cd C:\GIT\projectm\build-win\projectm\projectM-qt
 if %errorlevel% neq 0 goto :cmEnd
@@ -316,15 +576,45 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\GIT\projectm\build-win\projectm\projectM-qt
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\moc.exe @C:/GIT/projectm/build-win/projectm/projectM-qt/moc_qplaylistmodel.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qplaylistmodel.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qplaylistmodel.hpp;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qplaylistmodel.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qplaylistmodel.hpp;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qplaylistmodel.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qplaylistmodel.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\GIT\projectm\build-win\projectm\CMakeFiles\79cc4e7a331c122f5a3a312cde1aff55\moc_qprojectmconfigdialog.cpp.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating moc_qprojectmconfigdialog.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating moc_qprojectmconfigdialog.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\GIT\projectm\build-win\projectm\projectM-qt
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\moc.exe @C:/GIT/projectm/build-win/projectm/projectM-qt/moc_qprojectmconfigdialog.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
 cd C:\GIT\projectm\build-win\projectm\projectM-qt
 if %errorlevel% neq 0 goto :cmEnd
 C:
@@ -338,9 +628,13 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qprojectmconfigdialog.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectmconfigdialog.hpp;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qprojectmconfigdialog.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectmconfigdialog.hpp;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qprojectmconfigdialog.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qprojectmconfigdialog.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating moc_qprojectmconfigdialog.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating moc_qprojectmconfigdialog.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
 cd C:\GIT\projectm\build-win\projectm\projectM-qt
 if %errorlevel% neq 0 goto :cmEnd
@@ -354,15 +648,45 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\GIT\projectm\build-win\projectm\projectM-qt
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\moc.exe @C:/GIT/projectm/build-win/projectm/projectM-qt/moc_qprojectmconfigdialog.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qprojectmconfigdialog.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectmconfigdialog.hpp;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qprojectmconfigdialog.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectmconfigdialog.hpp;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qprojectmconfigdialog.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qprojectmconfigdialog.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\GIT\projectm\build-win\projectm\CMakeFiles\79cc4e7a331c122f5a3a312cde1aff55\moc_qplaylisttableview.cpp.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating moc_qplaylisttableview.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating moc_qplaylisttableview.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\GIT\projectm\build-win\projectm\projectM-qt
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\moc.exe @C:/GIT/projectm/build-win/projectm/projectM-qt/moc_qplaylisttableview.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
 cd C:\GIT\projectm\build-win\projectm\projectM-qt
 if %errorlevel% neq 0 goto :cmEnd
 C:
@@ -376,9 +700,13 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qplaylisttableview.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qplaylisttableview.hpp;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qplaylisttableview.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qplaylisttableview.hpp;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qplaylisttableview.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qplaylisttableview.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating moc_qplaylisttableview.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating moc_qplaylisttableview.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
 cd C:\GIT\projectm\build-win\projectm\projectM-qt
 if %errorlevel% neq 0 goto :cmEnd
@@ -392,15 +720,45 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\GIT\projectm\build-win\projectm\projectM-qt
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\moc.exe @C:/GIT/projectm/build-win/projectm/projectM-qt/moc_qplaylisttableview.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qplaylisttableview.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qplaylisttableview.hpp;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qplaylisttableview.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qplaylisttableview.hpp;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qplaylisttableview.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qplaylisttableview.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\GIT\projectm\build-win\projectm\CMakeFiles\79cc4e7a331c122f5a3a312cde1aff55\moc_qpresettextedit.cpp.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating moc_qpresettextedit.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating moc_qpresettextedit.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\GIT\projectm\build-win\projectm\projectM-qt
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\moc.exe @C:/GIT/projectm/build-win/projectm/projectM-qt/moc_qpresettextedit.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
 cd C:\GIT\projectm\build-win\projectm\projectM-qt
 if %errorlevel% neq 0 goto :cmEnd
 C:
@@ -414,9 +772,13 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qpresettextedit.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qpresettextedit.hpp;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qpresettextedit.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qpresettextedit.hpp;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qpresettextedit.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qpresettextedit.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating moc_qpresettextedit.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating moc_qpresettextedit.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
 cd C:\GIT\projectm\build-win\projectm\projectM-qt
 if %errorlevel% neq 0 goto :cmEnd
@@ -430,15 +792,45 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\GIT\projectm\build-win\projectm\projectM-qt
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\moc.exe @C:/GIT/projectm/build-win/projectm/projectM-qt/moc_qpresettextedit.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qpresettextedit.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qpresettextedit.hpp;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qpresettextedit.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qpresettextedit.hpp;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qpresettextedit.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qpresettextedit.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\GIT\projectm\build-win\projectm\CMakeFiles\79cc4e7a331c122f5a3a312cde1aff55\moc_qpreseteditordialog.cpp.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating moc_qpreseteditordialog.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating moc_qpreseteditordialog.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\GIT\projectm\build-win\projectm\projectM-qt
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\moc.exe @C:/GIT/projectm/build-win/projectm/projectM-qt/moc_qpreseteditordialog.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
 cd C:\GIT\projectm\build-win\projectm\projectM-qt
 if %errorlevel% neq 0 goto :cmEnd
 C:
@@ -452,9 +844,13 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qpreseteditordialog.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qpreseteditordialog.hpp;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qpreseteditordialog.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qpreseteditordialog.hpp;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qpreseteditordialog.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qpreseteditordialog.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating moc_qpreseteditordialog.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating moc_qpreseteditordialog.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
 cd C:\GIT\projectm\build-win\projectm\projectM-qt
 if %errorlevel% neq 0 goto :cmEnd
@@ -468,15 +864,45 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\GIT\projectm\build-win\projectm\projectM-qt
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\moc.exe @C:/GIT/projectm/build-win/projectm/projectM-qt/moc_qpreseteditordialog.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qpreseteditordialog.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qpreseteditordialog.hpp;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qpreseteditordialog.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qpreseteditordialog.hpp;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qpreseteditordialog.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qpreseteditordialog.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\GIT\projectm\build-win\projectm\CMakeFiles\79cc4e7a331c122f5a3a312cde1aff55\moc_qprojectm.cpp.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating moc_qprojectm.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating moc_qprojectm.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\GIT\projectm\build-win\projectm\projectM-qt
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\moc.exe @C:/GIT/projectm/build-win/projectm/projectM-qt/moc_qprojectm.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
 cd C:\GIT\projectm\build-win\projectm\projectM-qt
 if %errorlevel% neq 0 goto :cmEnd
 C:
@@ -490,9 +916,13 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qprojectm.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectm.hpp;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qprojectm.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectm.hpp;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qprojectm.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qprojectm.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating moc_qprojectm.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating moc_qprojectm.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
 cd C:\GIT\projectm\build-win\projectm\projectM-qt
 if %errorlevel% neq 0 goto :cmEnd
@@ -506,15 +936,45 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\GIT\projectm\build-win\projectm\projectM-qt
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\moc.exe @C:/GIT/projectm/build-win/projectm/projectM-qt/moc_qprojectm.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qprojectm.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectm.hpp;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qprojectm.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectm.hpp;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qprojectm.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qprojectm.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\GIT\projectm\build-win\projectm\CMakeFiles\79cc4e7a331c122f5a3a312cde1aff55\moc_qprojectmwidget.cpp.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating moc_qprojectmwidget.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating moc_qprojectmwidget.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\GIT\projectm\build-win\projectm\projectM-qt
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\moc.exe @C:/GIT/projectm/build-win/projectm/projectM-qt/moc_qprojectmwidget.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
 cd C:\GIT\projectm\build-win\projectm\projectM-qt
 if %errorlevel% neq 0 goto :cmEnd
 C:
@@ -528,9 +988,13 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qprojectmwidget.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectmwidget.hpp;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qprojectmwidget.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectmwidget.hpp;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qprojectmwidget.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qprojectmwidget.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating moc_qprojectmwidget.cpp</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating moc_qprojectmwidget.cpp</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
 cd C:\GIT\projectm\build-win\projectm\projectM-qt
 if %errorlevel% neq 0 goto :cmEnd
@@ -544,15 +1008,41 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\GIT\projectm\build-win\projectm\projectM-qt
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\moc.exe @C:/GIT/projectm/build-win/projectm/projectM-qt/moc_qprojectmwidget.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qprojectmwidget.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectmwidget.hpp;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/GIT/projectm/build-win/projectm/CMakeFiles/79cc4e7a331c122f5a3a312cde1aff55/moc_qprojectmwidget.cpp.rule;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectmwidget.hpp;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qprojectmwidget.cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\moc_qprojectmwidget.cpp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectm_mainwindow.ui">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating ui_qprojectm_mainwindow.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating ui_qprojectm_mainwindow.h</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\uic.exe -o C:/GIT/projectm/build-win/projectm/projectM-qt/ui_qprojectm_mainwindow.h C:/GIT/projectm/src/projectM-qt/qprojectm_mainwindow.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
 C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\uic.exe -o C:/GIT/projectm/build-win/projectm/projectM-qt/ui_qprojectm_mainwindow.h C:/GIT/projectm/src/projectM-qt/qprojectm_mainwindow.ui
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
@@ -562,9 +1052,13 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GIT/projectm/src/projectM-qt/qprojectm_mainwindow.ui;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectm_mainwindow.ui;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/GIT/projectm/src/projectM-qt/qprojectm_mainwindow.ui;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectm_mainwindow.ui;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\ui_qprojectm_mainwindow.h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\ui_qprojectm_mainwindow.h</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating ui_qprojectm_mainwindow.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating ui_qprojectm_mainwindow.h</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
 C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\uic.exe -o C:/GIT/projectm/build-win/projectm/projectM-qt/ui_qprojectm_mainwindow.h C:/GIT/projectm/src/projectM-qt/qprojectm_mainwindow.ui
 if %errorlevel% neq 0 goto :cmEnd
@@ -574,15 +1068,37 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\uic.exe -o C:/GIT/projectm/build-win/projectm/projectM-qt/ui_qprojectm_mainwindow.h C:/GIT/projectm/src/projectM-qt/qprojectm_mainwindow.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GIT/projectm/src/projectM-qt/qprojectm_mainwindow.ui;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectm_mainwindow.ui;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/GIT/projectm/src/projectM-qt/qprojectm_mainwindow.ui;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectm_mainwindow.ui;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\ui_qprojectm_mainwindow.h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\ui_qprojectm_mainwindow.h</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectmconfigdialog.ui">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating ui_qprojectmconfigdialog.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating ui_qprojectmconfigdialog.h</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\uic.exe -o C:/GIT/projectm/build-win/projectm/projectM-qt/ui_qprojectmconfigdialog.h C:/GIT/projectm/src/projectM-qt/qprojectmconfigdialog.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
 C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\uic.exe -o C:/GIT/projectm/build-win/projectm/projectM-qt/ui_qprojectmconfigdialog.h C:/GIT/projectm/src/projectM-qt/qprojectmconfigdialog.ui
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
@@ -592,9 +1108,13 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GIT/projectm/src/projectM-qt/qprojectmconfigdialog.ui;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectmconfigdialog.ui;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/GIT/projectm/src/projectM-qt/qprojectmconfigdialog.ui;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectmconfigdialog.ui;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\ui_qprojectmconfigdialog.h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\ui_qprojectmconfigdialog.h</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating ui_qprojectmconfigdialog.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating ui_qprojectmconfigdialog.h</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
 C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\uic.exe -o C:/GIT/projectm/build-win/projectm/projectM-qt/ui_qprojectmconfigdialog.h C:/GIT/projectm/src/projectM-qt/qprojectmconfigdialog.ui
 if %errorlevel% neq 0 goto :cmEnd
@@ -604,15 +1124,37 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\uic.exe -o C:/GIT/projectm/build-win/projectm/projectM-qt/ui_qprojectmconfigdialog.h C:/GIT/projectm/src/projectM-qt/qprojectmconfigdialog.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GIT/projectm/src/projectM-qt/qprojectmconfigdialog.ui;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectmconfigdialog.ui;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/GIT/projectm/src/projectM-qt/qprojectmconfigdialog.ui;$(MSBuildThisFileDirectory)../src\projectM-qt\qprojectmconfigdialog.ui;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\ui_qprojectmconfigdialog.h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\ui_qprojectmconfigdialog.h</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="$(MSBuildThisFileDirectory)../src\projectM-qt\qpreseteditordialog.ui">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating ui_qpreseteditordialog.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating ui_qpreseteditordialog.h</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\uic.exe -o C:/GIT/projectm/build-win/projectm/projectM-qt/ui_qpreseteditordialog.h C:/GIT/projectm/src/projectM-qt/qpreseteditordialog.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
 C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\uic.exe -o C:/GIT/projectm/build-win/projectm/projectM-qt/ui_qpreseteditordialog.h C:/GIT/projectm/src/projectM-qt/qpreseteditordialog.ui
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
@@ -622,9 +1164,13 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GIT/projectm/src/projectM-qt/qpreseteditordialog.ui;$(MSBuildThisFileDirectory)../src\projectM-qt\qpreseteditordialog.ui;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/GIT/projectm/src/projectM-qt/qpreseteditordialog.ui;$(MSBuildThisFileDirectory)../src\projectM-qt\qpreseteditordialog.ui;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\ui_qpreseteditordialog.h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\ui_qpreseteditordialog.h</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating ui_qpreseteditordialog.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating ui_qpreseteditordialog.h</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
 C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\uic.exe -o C:/GIT/projectm/build-win/projectm/projectM-qt/ui_qpreseteditordialog.h C:/GIT/projectm/src/projectM-qt/qpreseteditordialog.ui
 if %errorlevel% neq 0 goto :cmEnd
@@ -634,14 +1180,27 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\bin\uic.exe -o C:/GIT/projectm/build-win/projectm/projectM-qt/ui_qpreseteditordialog.h C:/GIT/projectm/src/projectM-qt/qpreseteditordialog.ui
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GIT/projectm/src/projectM-qt/qpreseteditordialog.ui;$(MSBuildThisFileDirectory)../src\projectM-qt\qpreseteditordialog.ui;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/GIT/projectm/src/projectM-qt/qpreseteditordialog.ui;$(MSBuildThisFileDirectory)../src\projectM-qt\qpreseteditordialog.ui;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\ui_qpreseteditordialog.h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\ui_qpreseteditordialog.h</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="$(MSBuildThisFileDirectory)../src\projectM-qt\CMakeLists.txt">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/GIT/projectm/src/projectM-qt/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/GIT/projectm/src/projectM-qt/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -SC:/GIT/projectm/src -BC:/GIT/projectm/build-win/projectm --check-stamp-file C:/GIT/projectm/build-win/projectm/projectM-qt/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
@@ -651,10 +1210,23 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/GIT/projectm/src -BC:/GIT/projectm/build-win/projectm --check-stamp-file C:/GIT/projectm/build-win/projectm/projectM-qt/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GIT/projectm/src/projectM-qt/CMakeLists.txt;$(MSBuildThisFileDirectory)../src\projectM-qt\CMakeLists.txt;$(MSBuildThisFileDirectory)../src\projectM-qt\FindPkgConfig.cmake;$(MSBuildThisFileDirectory)../src\projectM-qt\application.qrc;$(MSBuildThisFileDirectory)../src\projectM-qt\cmake\CPack-projectM.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.14\Templates\CPackConfig.cmake.in;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Core\Qt5CoreConfig.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Core\Qt5CoreConfigExtras.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Core\Qt5CoreConfigExtrasMkspecDir.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Core\Qt5CoreConfigVersion.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Core\Qt5CoreMacros.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5GuiConfig.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5GuiConfigExtras.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5GuiConfigVersion.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QGifPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QICNSPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QICOPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QJpegPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QMinimalIntegrationPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QOffscreenIntegrationPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QTgaPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QTiffPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QTuioTouchPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QWbmpPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QWebpPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QWindowsIntegrationPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5OpenGL\Qt5OpenGLConfig.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5OpenGL\Qt5OpenGLConfigVersion.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Widgets\Qt5WidgetsConfig.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Widgets\Qt5WidgetsConfigExtras.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Widgets\Qt5WidgetsConfigVersion.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Widgets\Qt5WidgetsMacros.cmake;$(MSBuildThisFileDirectory)../src\projectM-qt\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/GIT/projectm/src/projectM-qt/CMakeLists.txt;$(MSBuildThisFileDirectory)../src\projectM-qt\CMakeLists.txt;$(MSBuildThisFileDirectory)../src\projectM-qt\FindPkgConfig.cmake;$(MSBuildThisFileDirectory)../src\projectM-qt\application.qrc;$(MSBuildThisFileDirectory)../src\projectM-qt\cmake\CPack-projectM.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.14\Templates\CPackConfig.cmake.in;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Core\Qt5CoreConfig.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Core\Qt5CoreConfigExtras.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Core\Qt5CoreConfigExtrasMkspecDir.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Core\Qt5CoreConfigVersion.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Core\Qt5CoreMacros.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5GuiConfig.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5GuiConfigExtras.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5GuiConfigVersion.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QGifPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QICNSPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QICOPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QJpegPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QMinimalIntegrationPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QOffscreenIntegrationPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QTgaPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QTiffPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QTuioTouchPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QWbmpPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QWebpPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QWindowsIntegrationPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5OpenGL\Qt5OpenGLConfig.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5OpenGL\Qt5OpenGLConfigVersion.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Widgets\Qt5WidgetsConfig.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Widgets\Qt5WidgetsConfigExtras.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Widgets\Qt5WidgetsConfigVersion.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Widgets\Qt5WidgetsMacros.cmake;$(MSBuildThisFileDirectory)../src\projectM-qt\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/GIT/projectm/src/projectM-qt/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/GIT/projectm/src/projectM-qt/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -SC:/GIT/projectm/src -BC:/GIT/projectm/build-win/projectm --check-stamp-file C:/GIT/projectm/build-win/projectm/projectM-qt/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
@@ -664,9 +1236,21 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/GIT/projectm/src -BC:/GIT/projectm/build-win/projectm --check-stamp-file C:/GIT/projectm/build-win/projectm/projectM-qt/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GIT/projectm/src/projectM-qt/CMakeLists.txt;$(MSBuildThisFileDirectory)../src\projectM-qt\CMakeLists.txt;$(MSBuildThisFileDirectory)../src\projectM-qt\FindPkgConfig.cmake;$(MSBuildThisFileDirectory)../src\projectM-qt\application.qrc;$(MSBuildThisFileDirectory)../src\projectM-qt\cmake\CPack-projectM.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.14\Templates\CPackConfig.cmake.in;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Core\Qt5CoreConfig.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Core\Qt5CoreConfigExtras.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Core\Qt5CoreConfigExtrasMkspecDir.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Core\Qt5CoreConfigVersion.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Core\Qt5CoreMacros.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5GuiConfig.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5GuiConfigExtras.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5GuiConfigVersion.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QGifPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QICNSPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QICOPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QJpegPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QMinimalIntegrationPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QOffscreenIntegrationPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QTgaPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QTiffPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QTuioTouchPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QWbmpPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QWebpPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QWindowsIntegrationPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5OpenGL\Qt5OpenGLConfig.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5OpenGL\Qt5OpenGLConfigVersion.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Widgets\Qt5WidgetsConfig.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Widgets\Qt5WidgetsConfigExtras.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Widgets\Qt5WidgetsConfigVersion.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Widgets\Qt5WidgetsMacros.cmake;$(MSBuildThisFileDirectory)../src\projectM-qt\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/GIT/projectm/src/projectM-qt/CMakeLists.txt;$(MSBuildThisFileDirectory)../src\projectM-qt\CMakeLists.txt;$(MSBuildThisFileDirectory)../src\projectM-qt\FindPkgConfig.cmake;$(MSBuildThisFileDirectory)../src\projectM-qt\application.qrc;$(MSBuildThisFileDirectory)../src\projectM-qt\cmake\CPack-projectM.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.14\Templates\CPackConfig.cmake.in;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Core\Qt5CoreConfig.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Core\Qt5CoreConfigExtras.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Core\Qt5CoreConfigExtrasMkspecDir.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Core\Qt5CoreConfigVersion.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Core\Qt5CoreMacros.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5GuiConfig.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5GuiConfigExtras.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5GuiConfigVersion.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QGifPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QICNSPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QICOPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QJpegPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QMinimalIntegrationPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QOffscreenIntegrationPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QTgaPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QTiffPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QTuioTouchPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QWbmpPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QWebpPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Gui\Qt5Gui_QWindowsIntegrationPlugin.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5OpenGL\Qt5OpenGLConfig.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5OpenGL\Qt5OpenGLConfigVersion.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Widgets\Qt5WidgetsConfig.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Widgets\Qt5WidgetsConfigExtras.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Widgets\Qt5WidgetsConfigVersion.cmake;C:\Qt\Qt5.9.4\5.9.4\msvc2017_64\lib\cmake\Qt5Widgets\Qt5WidgetsMacros.cmake;$(MSBuildThisFileDirectory)../src\projectM-qt\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GIT\projectm\build-win\projectm\projectM-qt\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\GIT\projectm\build-win\projectm\projectM-qt\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

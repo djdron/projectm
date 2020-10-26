@@ -19,16 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{B7C4937F-A36D-3B6C-A8AC-CA99772AE5EC}</ProjectGuid>
+    <ProjectGuid>{F8217631-A9B4-FEBA-9737-D986432BAD39}</ProjectGuid>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
-    <ProjectName>RovastarFractalSpiral</ProjectName>
+    <ProjectName>projectM-foobar2000</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
@@ -38,7 +38,7 @@
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
@@ -56,30 +56,34 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">squashNativePresets\Debug\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">RovastarFractalSpiral.dir\Debug\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">RovastarFractalSpiral</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">RovastarFractalSpiral</TargetName>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.dll</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">projectM-foobar2000\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">projectM-foobar2000.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">projectM</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">foo_vis_projectM</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">squashNativePresets\Release\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">RovastarFractalSpiral.dir\Release\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">RovastarFractalSpiral</TargetName>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">RovastarFractalSpiral</TargetName>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.dll</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">projectM-foobar2000\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">projectM-foobar2000.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">projectM</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">foo_vis_projectM</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IntDir>$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IntDir>$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;$(MSBuildThisFileDirectory)../src\libprojectM\NativePresetFactory;$(MSBuildThisFileDirectory)../vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;$(MSBuildThisFileDirectory)../vendor;E:\projects\lib\SDK-2019-12-27;E:\projects\lib\SDK-2019-12-27\foobar2000;E:\projects\lib\WTL90_4140_Final\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Debug/</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -92,15 +96,15 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;LINUX;PROJECTM_PREFIX='""';RovastarFractalSpiral_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>USE_TEXT_MENU;WIN32;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;LINUX;PROJECTM_PREFIX='\"\"';RovastarFractalSpiral_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;$(MSBuildThisFileDirectory)../src\libprojectM\NativePresetFactory;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;$(MSBuildThisFileDirectory)../src\libprojectM\NativePresetFactory;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -108,14 +112,14 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>Renderer\Debug\Renderer.lib;NativePresetFactory\Debug\NativePresetFactory.lib;libprojectM\Debug\projectM.lib;NativePresetFactory\Debug\NativePresetFactory.lib;MilkdropPresetFactory\Debug\MilkdropPresetFactory.lib;Renderer\Debug\Renderer.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>libprojectM\Debug\projectM.lib;opengl32.lib;glu32.lib;NativePresetFactory\Debug\NativePresetFactory.lib;MilkdropPresetFactory\Debug\MilkdropPresetFactory.lib;Renderer\Debug\Renderer.lib;E:\projects\lib\SDK-2019-12-27\foobar2000\SDK\Debug\foobar2000_SDK.lib;E:\projects\lib\SDK-2019-12-27\foobar2000\foobar2000_component_client\Debug\foobar2000_component_client.lib;E:\projects\lib\SDK-2019-12-27\libPPUI\Debug\libPPUI.lib;E:\projects\lib\SDK-2019-12-27\foobar2000\shared\shared.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>NativePresets/Debug/RovastarFractalSpiral.lib</ImportLibrary>
-      <ProgramDataBaseFile>NativePresets/Debug/RovastarFractalSpiral.pdb</ProgramDataBaseFile>
-      <SubSystem>Console</SubSystem>
+      <ImportLibrary>projectM-foobar2000/Debug/projectM-foobar2000.lib</ImportLibrary>
+      <ProgramDataBaseFile>projectM-foobar2000/Debug/projectM-foobar2000.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -123,7 +127,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;$(MSBuildThisFileDirectory)../src\libprojectM\NativePresetFactory;$(MSBuildThisFileDirectory)../vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;$(MSBuildThisFileDirectory)../vendor;E:\projects\lib\SDK-2019-12-27;E:\projects\lib\SDK-2019-12-27\foobar2000;E:\projects\lib\WTL90_4140_Final\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Debug/</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -132,19 +136,20 @@
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;LINUX;PROJECTM_PREFIX='""';RovastarFractalSpiral_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>USE_TEXT_MENU;WIN32;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;LINUX;PROJECTM_PREFIX='\"\"';RovastarFractalSpiral_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;$(MSBuildThisFileDirectory)../src\libprojectM\NativePresetFactory;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;$(MSBuildThisFileDirectory)../src\libprojectM\NativePresetFactory;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -152,14 +157,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>Renderer\Debug\Renderer.lib;NativePresetFactory\Debug\NativePresetFactory.lib;libprojectM\Debug\projectM.lib;NativePresetFactory\Debug\NativePresetFactory.lib;MilkdropPresetFactory\Debug\MilkdropPresetFactory.lib;Renderer\Debug\Renderer.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>libprojectM\Debug\projectM.lib;NativePresetFactory\Debug\NativePresetFactory.lib;MilkdropPresetFactory\Debug\MilkdropPresetFactory.lib;Renderer\Debug\Renderer.lib;opengl32.lib;glu32.lib;E:\projects\lib\SDK-2019-12-27\foobar2000\SDK\Debug\foobar2000_SDK.lib;E:\projects\lib\SDK-2019-12-27\pfc\Debug\pfc.lib;E:\projects\lib\SDK-2019-12-27\foobar2000\helpers\Debug\foobar2000_sdk_helpers.lib;E:\projects\lib\SDK-2019-12-27\foobar2000\foobar2000_component_client\Debug\foobar2000_component_client.lib;E:\projects\lib\SDK-2019-12-27\libPPUI\Debug\libPPUI.lib;E:\projects\lib\SDK-2019-12-27\foobar2000\shared\shared.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x86</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>NativePresets/Debug/RovastarFractalSpiral.lib</ImportLibrary>
-      <ProgramDataBaseFile>NativePresets/Debug/RovastarFractalSpiral.pdb</ProgramDataBaseFile>
-      <SubSystem>Console</SubSystem>
+      <ImportLibrary>projectM-foobar2000/Debug/projectM-foobar2000.lib</ImportLibrary>
+      <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -167,7 +171,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;$(MSBuildThisFileDirectory)../src\libprojectM\NativePresetFactory;$(MSBuildThisFileDirectory)../vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;$(MSBuildThisFileDirectory)../vendor;E:\projects\lib\SDK-2019-12-27;E:\projects\lib\SDK-2019-12-27\foobar2000;E:\projects\lib\WTL90_4140_Final\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Release/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -178,17 +182,17 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;LINUX;PROJECTM_PREFIX='""';RovastarFractalSpiral_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>USE_TEXT_MENU;WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;LINUX;PROJECTM_PREFIX='\"\"';RovastarFractalSpiral_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;$(MSBuildThisFileDirectory)../src\libprojectM\NativePresetFactory;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;$(MSBuildThisFileDirectory)../src\libprojectM\NativePresetFactory;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -196,14 +200,14 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>Renderer\Release\Renderer.lib;NativePresetFactory\Release\NativePresetFactory.lib;libprojectM\Release\projectM.lib;NativePresetFactory\Release\NativePresetFactory.lib;MilkdropPresetFactory\Release\MilkdropPresetFactory.lib;Renderer\Release\Renderer.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>libprojectM\Release\projectM.lib;opengl32.lib;glu32.lib;NativePresetFactory\Release\NativePresetFactory.lib;MilkdropPresetFactory\Release\MilkdropPresetFactory.lib;Renderer\Release\Renderer.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>NativePresets/Release/RovastarFractalSpiral.lib</ImportLibrary>
-      <ProgramDataBaseFile>NativePresets/Release/RovastarFractalSpiral.pdb</ProgramDataBaseFile>
-      <SubSystem>Console</SubSystem>
+      <ImportLibrary>projectM-foobar2000/Release/projectM-foobar2000.lib</ImportLibrary>
+      <ProgramDataBaseFile>projectM-foobar2000/Release/projectM-foobar2000.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -211,28 +215,28 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;$(MSBuildThisFileDirectory)../src\libprojectM\NativePresetFactory;$(MSBuildThisFileDirectory)../vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;$(MSBuildThisFileDirectory)../vendor;E:\projects\lib\SDK-2019-12-27;E:\projects\lib\SDK-2019-12-27\foobar2000;E:\projects\lib\WTL90_4140_Final\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Release/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;LINUX;PROJECTM_PREFIX='""';RovastarFractalSpiral_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>USE_TEXT_MENU;WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;LINUX;PROJECTM_PREFIX='\"\"';RovastarFractalSpiral_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;$(MSBuildThisFileDirectory)../src\libprojectM\NativePresetFactory;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;$(MSBuildThisFileDirectory)../src\libprojectM\NativePresetFactory;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)../src\libprojectM;$(MSBuildThisFileDirectory);$(MSBuildThisFileDirectory)../src\libprojectM\Renderer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -240,42 +244,36 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>Renderer\Release\Renderer.lib;NativePresetFactory\Release\NativePresetFactory.lib;libprojectM\Release\projectM.lib;NativePresetFactory\Release\NativePresetFactory.lib;MilkdropPresetFactory\Release\MilkdropPresetFactory.lib;Renderer\Release\Renderer.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>libprojectM\Release\projectM.lib;opengl32.lib;glu32.lib;NativePresetFactory\Release\NativePresetFactory.lib;MilkdropPresetFactory\Release\MilkdropPresetFactory.lib;Renderer\Release\Renderer.lib;E:\projects\lib\SDK-2019-12-27\foobar2000\SDK\Release\foobar2000_SDK.lib;E:\projects\lib\SDK-2019-12-27\pfc\Release\pfc.lib;E:\projects\lib\SDK-2019-12-27\foobar2000\helpers\Release\foobar2000_sdk_helpers.lib;E:\projects\lib\SDK-2019-12-27\foobar2000\foobar2000_component_client\Release\foobar2000_component_client.lib;E:\projects\lib\SDK-2019-12-27\libPPUI\Release\libPPUI.lib;E:\projects\lib\SDK-2019-12-27\foobar2000\shared\shared.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x86</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>NativePresets/Release/RovastarFractalSpiral.lib</ImportLibrary>
-      <ProgramDataBaseFile>NativePresets/Release/RovastarFractalSpiral.pdb</ProgramDataBaseFile>
-      <SubSystem>Console</SubSystem>
+      <ImportLibrary>projectM-foobar2000/Release/projectM-foobar2000.lib</ImportLibrary>
+      <ProgramDataBaseFile>projectM-foobar2000/Release/projectM-foobar2000.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)../src\NativePresets\RovastarFractalSpiral.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)../src\projectM-foobar2000\projectM_foobar2000.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="squashZERO_CHECK.vcxproj">
-      <Project>{A7863C4B-0CDF-33D3-A206-8DC19E45FB41}</Project>
-      <Name>ZERO_CHECK</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </ProjectReference>
-    <ProjectReference Include="\MilkdropPresetFactory\MilkdropPresetFactory.vcxproj">
+    <ProjectReference Include="\MilkdropPresetFactory.vcxproj">
       <Project>{EF3369C9-E934-3F1E-996B-21518B57A809}</Project>
       <Name>MilkdropPresetFactory</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="\NativePresetFactory\NativePresetFactory.vcxproj">
+    <ProjectReference Include="\NativePresetFactory.vcxproj">
       <Project>{E2D4CEE6-B8CB-32AC-8977-52A48C8DA4E1}</Project>
       <Name>NativePresetFactory</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="\Renderer\Renderer.vcxproj">
+    <ProjectReference Include="\Renderer.vcxproj">
       <Project>{07427FA1-1771-3A2D-9183-167A8345DEEB}</Project>
       <Name>Renderer</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>

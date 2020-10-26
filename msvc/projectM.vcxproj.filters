@@ -17,6 +17,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)../src\libprojectM\wipemalloc.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)../msvc\glew.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)../msvc\dlfcn.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)../src\libprojectM\FileScanner.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)../msvc\glew.h" />
