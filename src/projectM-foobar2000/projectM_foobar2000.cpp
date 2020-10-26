@@ -37,7 +37,6 @@ public:
 	BEGIN_MSG_MAP_EX(ui_element_instance_projectM)
 		MSG_WM_CREATE(OnCreate)
 		MSG_WM_DESTROY(OnDestroy)
-		MSG_WM_TIMER(OnTimer)
 		MSG_WM_RBUTTONDOWN(OnRButtonDown)
 		MSG_WM_LBUTTONDBLCLK(OnLButtonDblClk)
 		MSG_WM_PAINT(OnPaint)
@@ -56,11 +55,9 @@ public:
 	static ui_element_config::ptr g_get_default_configuration() { return ui_element_config::g_create_empty(g_get_guid()); }
 	static const char * g_get_description() { return "projectM visualization."; }
 	
-	void notify(const GUID & p_what, t_size p_param1, const void * p_param2, t_size p_param2size);
 private:
 	LRESULT OnCreate(LPCREATESTRUCT cs);
 	void OnDestroy();
-	void OnTimer(UINT_PTR nIDEvent);
 	void OnRButtonDown(UINT nFlags, CPoint point);
 	void OnLButtonDblClk(UINT nFlags, CPoint point) { static_api_ptr_t<ui_element_common_methods_v2>()->toggle_fullscreen(g_get_guid(), core_api::get_main_window()); }
 	void OnPaint(CDCHandle);
@@ -68,16 +65,21 @@ private:
 
 	void AddPCM();
 
-	enum { ID_REFRESH_TIMER = 1 };
+	static VOID CALLBACK TimerRoutine(PVOID lpParam, BOOLEAN TimerOrWaitFired);
+	void OnTimer();
 
 private:
-	ui_element_config::ptr m_config;
 	visualisation_stream_v2::ptr m_vis_stream;
 	std::unique_ptr<projectM> m_projectM;
 	HGLRC m_GLrc = NULL;
-	double last_time = 0.0;
+	double m_last_time = 0.0;
+
+	HANDLE m_timerQueue = CreateTimerQueue();
+	HANDLE m_timer = NULL;
+	HANDLE m_timerDoneEvent = CreateEvent(NULL, TRUE, FALSE, NULL);
 
 protected:
+	ui_element_config::ptr m_config;
 	const ui_element_instance_callback_ptr m_callback;
 };
 
@@ -157,13 +159,13 @@ LRESULT ui_element_instance_projectM::OnCreate(LPCREATESTRUCT cs)
 	// init with settings
 	m_projectM = std::make_unique<projectM>(settings, 0);
 //	m_projectM->projectM_resetGL(width, height);
-	m_projectM->renderer->showfps = true;
+//	m_projectM->renderer->showfps = true;
 //	m_projectM->renderer->showstats = true;
 	m_projectM->selectRandom(true);
 
-	VsyncGL(false);
+	VsyncGL(true);
 
-	console::formatter() << "projectM: OnCreate";
+//	console::formatter() << "projectM: OnCreate";
 
 	return 0;
 }
@@ -175,22 +177,25 @@ void ui_element_instance_projectM::OnDestroy()
 	m_vis_stream.release();
 	m_projectM.reset();
 
-	console::formatter() << "projectM: OnDestroy";
+	if (m_timer)
+		WaitForSingleObject(m_timerDoneEvent, INFINITE);
+	CloseHandle(m_timerDoneEvent);
+	DeleteTimerQueue(m_timerQueue);
+
+//	console::formatter() << "projectM: OnDestroy";
 }
 
-void ui_element_instance_projectM::notify(const GUID & p_what, t_size p_param1, const void * p_param2, t_size p_param2size)
+void ui_element_instance_projectM::OnTimer()
 {
-	if(p_what == ui_element_notify_colors_changed || p_what == ui_element_notify_font_changed)
-	{
-		// we use global colors and fonts - trigger a repaint whenever these change.
-		Invalidate();
-	}
-}
-
-void ui_element_instance_projectM::OnTimer(UINT_PTR nIDEvent)
-{
-	KillTimer(ID_REFRESH_TIMER);
 	Invalidate();
+	SetEvent(m_timerDoneEvent);
+}
+
+VOID CALLBACK ui_element_instance_projectM::TimerRoutine(
+	PVOID lpParam, BOOLEAN TimerOrWaitFired)
+{
+	auto ui = (ui_element_instance_projectM *)lpParam;
+	ui->OnTimer();
 }
 
 void ui_element_instance_projectM::OnRButtonDown(UINT nFlags, CPoint point)
@@ -219,7 +224,9 @@ void ui_element_instance_projectM::OnPaint(CDCHandle)
 	ValidateRect(NULL);
 
 	AddPCM();
-	SetTimer(ID_REFRESH_TIMER, 10);
+
+	ResetEvent(m_timerDoneEvent);
+	CreateTimerQueueTimer(&m_timer, m_timerQueue, (WAITORTIMERCALLBACK)TimerRoutine, this, 10, 0, 0);
 }
 
 void ui_element_instance_projectM::OnSize(UINT nType, CSize size)
@@ -228,7 +235,7 @@ void ui_element_instance_projectM::OnSize(UINT nType, CSize size)
 	{
 		wglMakeCurrent(GetDC(), m_GLrc);
 		m_projectM->projectM_resetGL(size.cx, size.cy);
-		console::formatter() << "projectM: OnSize " << size.cx << ", " << size.cy;
+//		console::formatter() << "projectM: OnSize " << size.cx << ", " << size.cy;
 	}
 }
 
@@ -239,8 +246,8 @@ void ui_element_instance_projectM::AddPCM()
 	double time;
 	if (!m_vis_stream->get_absolute_time(time)) return;
 
-	double dt = time - last_time;
-	last_time = time;
+	double dt = time - m_last_time;
+	m_last_time = time;
 
 	double min_time = 1.0/1000.0;
 	double max_time = 1.0/10.0;
