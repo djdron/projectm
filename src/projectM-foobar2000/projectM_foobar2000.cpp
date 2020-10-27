@@ -19,7 +19,7 @@ DECLARE_COMPONENT_VERSION("projectM visualizer", "0.0.1",
 
 "Distributed under the terms of GNU LGPL v2.1\n"
 "Source code can be obtained from:\n"
-"https://github.com/projectM-visualizer/projectm\n"
+"https://github.com/djdron/projectm/tree/foobar2000\n"
 );
 
 VALIDATE_COMPONENT_FILENAME("foo_vis_projectM.dll");
@@ -127,7 +127,10 @@ LRESULT ui_element_instance_projectM::OnCreate(LPCREATESTRUCT cs)
 	vis_manager->create_stream(m_vis_stream, 0);
 	m_vis_stream->request_backlog(0.8);
 
-	std::string base_path = "E:\\projects\\projectm\\msvc\\projectM-sdl\\Debug\\";
+	std::string base_path = core_api::get_my_full_path();
+	std::string::size_type t = base_path.rfind('\\');
+	if (t != std::string::npos) base_path.erase(t + 1);
+
 	RECT r;
 	GetClientRect(&r);
 	int width = r.right - r.left;
@@ -153,9 +156,8 @@ LRESULT ui_element_instance_projectM::OnCreate(LPCREATESTRUCT cs)
 	settings.softCutRatingsEnabled = 1; // ???
 	// get path to our app, use CWD or resource dir for presets/fonts/etc
 	settings.presetURL = base_path + "presets";
-//	settings.presetURL = base_path + "presets/presets_shader_test";
-	settings.menuFontURL = base_path + "fonts/Vera.ttf";
-	settings.titleFontURL = base_path + "fonts/Vera.ttf";
+	settings.menuFontURL = base_path + "Vera.ttf";
+	settings.titleFontURL = base_path + "Vera.ttf";
 	// init with settings
 	m_projectM = std::make_unique<projectM>(settings, 0);
 //	m_projectM->projectM_resetGL(width, height);
